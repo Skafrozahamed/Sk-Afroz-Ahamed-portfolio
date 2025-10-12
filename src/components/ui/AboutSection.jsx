@@ -39,7 +39,7 @@ const AboutSection = () => {
             <div className="relative">
               <div className="w-80 h-80 bg-primary rounded-2xl rotate-6 transition-transform duration-300 hover:rotate-3"></div>
               <img
-                src="public/assets/images/profile.png"
+                src="/assets/images/profile.png"
                 alt="SK Afroz Ahamed"
                 className="absolute top-0 left-0 w-80 h-80 object-cover rounded-2xl shadow-xl"
               />
@@ -52,21 +52,23 @@ const AboutSection = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="space-y-6"
           >
-            <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
-  I am a dedicated Graduate Engineer in Electronics & Communication Engineering with comprehensive 
-  expertise in Embedded Systems, IoT solutions, and Circuit Design. Currently advancing my career 
-  as a <strong>Graduate Engineer Trainee at Gautam Solar Pvt. Ltd.</strong>, where I specialize in 
-  solar module manufacturing with a focus on operating and optimizing the 
-  <strong> A050k Stringer Machine</strong> for automated solar cell stringing processes.
-</p>
+            <div className="space-y-4">
+              <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
+                I am a dedicated Graduate Engineer in Electronics & Communication Engineering with comprehensive 
+                expertise in Embedded Systems, IoT solutions, and Circuit Design. Currently advancing my career 
+                as a <strong>Graduate Engineer Trainee at Gautam Solar Pvt. Ltd.</strong>, where I specialize in 
+                solar module manufacturing with a focus on operating and optimizing the 
+                <strong> A050k Stringer Machine</strong> for automated solar cell stringing processes.
+              </p>
 
-<p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed mt-4">
-  In my role, I ensure precision manufacturing of photovoltaic modules through technical oversight 
-  of automated stringing operations, quality control adherence to international PV standards, and 
-  preventive maintenance of sophisticated production equipment. This position allows me to bridge 
-  my electronics engineering background with cutting-edge renewable energy technology and industrial 
-  automation systems.
-</p>
+              <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
+                In my role, I ensure precision manufacturing of photovoltaic modules through technical oversight 
+                of automated stringing operations, quality control adherence to international PV standards, and 
+                preventive maintenance of sophisticated production equipment. This position allows me to bridge 
+                my electronics engineering background with cutting-edge renewable energy technology and industrial 
+                automation systems.
+              </p>
+            </div>
 
             <div className="grid grid-cols-3 gap-6 py-6">
               {stats.map((stat, index) => (
@@ -90,6 +92,7 @@ const AboutSection = () => {
             <motion.a
               href="/assets/resume/Sk_Afroz_Ahamed_Resume.pdf"
               target="_blank"
+              rel="noopener noreferrer"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="inline-flex items-center gap-2 bg-primary text-white px-6 py-3 rounded-lg font-medium transition-all duration-300 hover:bg-primary-dark"
