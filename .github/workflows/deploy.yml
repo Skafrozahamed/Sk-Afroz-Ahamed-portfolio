@@ -18,12 +18,28 @@ jobs:
         node-version: '20'
         cache: 'npm'
     
-    - name: Install dependencies using npm ci
+    - name: Debug node_modules
       run: |
-        npm ci --legacy-peer-deps
+        ls -la node_modules/ | head -10
+        echo "Checking rollup installation..."
+        ls -la node_modules/rollup/ || echo "Rollup not found"
+    
+    - name: Install dependencies with clean slate
+      run: |
+        # Remove existing installations
+        rm -rf node_modules package-lock.json
+        
+        # Install with force to ensure all optional dependencies are installed
+        npm install --force --legacy-peer-deps --no-optional=false
+        
+        # Verify rollup installation
+        ls node_modules/.bin/rollup && echo "Rollup binary found"
     
     - name: Build project
-      run: npm run build
+      run: |
+        # Set environment variable to skip optional dependencies check
+        export ROLLUP_DISABLE_OPTIONAL_DEPS=true
+        npm run build
     
     - name: Setup Pages
       uses: actions/configure-pages@v4
