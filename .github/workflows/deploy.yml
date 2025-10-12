@@ -18,10 +18,9 @@ jobs:
         node-version: '20'
         cache: 'npm'
     
-    - name: Install dependencies
+    - name: Install dependencies using npm ci
       run: |
-        # Use npm install instead of npm ci since we deleted package-lock.json
-        npm install --legacy-peer-deps
+        npm ci --legacy-peer-deps
     
     - name: Build project
       run: npm run build
