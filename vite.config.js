@@ -1,13 +1,12 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
-// https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: '/SK-Afroz-Ahamed-portfolio/',
+  base: '/Sk-Afroz-Ahamed-portfolio/', // Note: case-sensitive
   build: {
     outDir: 'dist',
-    sourcemap: true,
+    sourcemap: false, // Disable for production
   },
   server: {
     port: 3000,
