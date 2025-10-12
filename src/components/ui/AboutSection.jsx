@@ -42,6 +42,10 @@ const AboutSection = () => {
                 src="/assets/images/profile.png"
                 alt="SK Afroz Ahamed"
                 className="absolute top-0 left-0 w-80 h-80 object-cover rounded-2xl shadow-xl"
+                onError={(e) => {
+                  e.target.style.display = 'none';
+                  console.log('Image failed to load: /assets/images/profile.png');
+                }}
               />
             </div>
           </motion.div>
@@ -96,9 +100,23 @@ const AboutSection = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="inline-flex items-center gap-2 bg-primary text-white px-6 py-3 rounded-lg font-medium transition-all duration-300 hover:bg-primary-dark"
+              onClick={(e) => {
+                // Test if file exists
+                fetch("/assets/resume/Sk_Afroz_Ahamed_Resume.pdf")
+                  .then(response => {
+                    if (!response.ok) {
+                      e.preventDefault();
+                      alert('CV file not found. Please check the file path.');
+                    }
+                  })
+                  .catch(() => {
+                    e.preventDefault();
+                    alert('CV file not found. Please check the file path.');
+                  });
+              }}
             >
               Download CV
-              <i className="fas fa-download" />
+              <i className="fas fa-download ml-2" />
             </motion.a>
           </motion.div>
         </div>
