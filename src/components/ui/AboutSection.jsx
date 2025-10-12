@@ -39,7 +39,7 @@ const AboutSection = () => {
             <div className="relative">
               <div className="w-80 h-80 bg-primary rounded-2xl rotate-6 transition-transform duration-300 hover:rotate-3"></div>
               <img
-                src="public/assets/images/profile.png"
+                src="/assets/images/profile.png"
                 alt="SK Afroz Ahamed"
                 className="absolute top-0 left-0 w-80 h-80 object-cover rounded-2xl shadow-xl"
               />
