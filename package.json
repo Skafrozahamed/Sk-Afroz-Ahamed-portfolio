@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "type": "module",
   "homepage": "https://skafrozahamed.github.io/SK-Afroz-Ahamed-portfolio",
- {
   "scripts": {
     "dev": "vite",
     "build": "vite build",
