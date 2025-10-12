@@ -1,7 +1,7 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 
-const AnimatedButton = ({ 
+const AnimatedButton = ({
   children, 
   onClick, 
   variant = 'primary',
