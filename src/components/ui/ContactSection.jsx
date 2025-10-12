@@ -27,12 +27,12 @@ const ContactSection = () => {
     {
       icon: 'fa-phone',
       title: 'Call Me',
-      value: '+91 7908115024'
+      value: '+91 7908******'
     },
     {
       icon: 'fa-envelope',
       title: 'Email',
-      value: 'skafrozahamedtpo@gmail.com'
+      value: 'ska*************@gmail.com'
     },
     {
       icon: 'fa-map-marker-alt',
