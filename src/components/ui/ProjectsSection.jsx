@@ -18,7 +18,7 @@ const ProjectsSection = () => {
         'Servo motors for gate control',
         'IoT integration for monitoring'
       ],
-      reportUrl: '/assets/Report/Final year Project Report Afroz.pdf'
+      reportUrl: `${process.env.PUBLIC_URL}/assets/Report/Final year Project Report Afroz.pdf`
     },
     {
       id: 2,
@@ -32,7 +32,7 @@ const ProjectsSection = () => {
         'Real-time data visualization',
         'Alert notification system'
       ],
-      reportUrl: '/assets/Report/My Project.pdf'
+      reportUrl: `${process.env.PUBLIC_URL}/assets/Report/My Project.pdf`
     }
   ]
 
