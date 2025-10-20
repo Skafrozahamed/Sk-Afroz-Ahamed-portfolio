@@ -39,12 +39,11 @@ const AboutSection = () => {
             <div className="relative">
               <div className="w-80 h-80 bg-primary rounded-2xl rotate-6 transition-transform duration-300 hover:rotate-3"></div>
               <img
-                src="/assets/images/profile.png"
+                src={`${process.env.PUBLIC_URL}/assets/images/profile.png`}
                 alt="SK Afroz Ahamed"
                 className="absolute top-0 left-0 w-80 h-80 object-cover rounded-2xl shadow-xl"
                 onError={(e) => {
-                  e.target.style.display = 'none';
-                  console.log('Image failed to load: /assets/images/profile.png');
+                  console.error('Failed to load image:', e.target.src);
                 }}
               />
             </div>
@@ -94,26 +93,12 @@ const AboutSection = () => {
             </div>
 
             <motion.a
-              href="/assets/resume/Sk_Afroz_Ahamed_Resume.pdf"
+              href={`${process.env.PUBLIC_URL}/assets/resume/Sk_Afroz_Ahamed_Resume.pdf`}
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="inline-flex items-center gap-2 bg-primary text-white px-6 py-3 rounded-lg font-medium transition-all duration-300 hover:bg-primary-dark"
-              onClick={(e) => {
-                // Test if file exists
-                fetch("/assets/resume/Sk_Afroz_Ahamed_Resume.pdf")
-                  .then(response => {
-                    if (!response.ok) {
-                      e.preventDefault();
-                      alert('CV file not found. Please check the file path.');
-                    }
-                  })
-                  .catch(() => {
-                    e.preventDefault();
-                    alert('CV file not found. Please check the file path.');
-                  });
-              }}
             >
               Download CV
               <i className="fas fa-download ml-2" />
